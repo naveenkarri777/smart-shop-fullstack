@@ -11,7 +11,6 @@ const BestSeller = () => {
   if (Array.isArray(products)) {
     const bestproducts = products.filter((item) => item.bestseller);
     setbestseller(bestproducts.slice(0, 5));
-    console.log("bestseller : ",bestseller);
     
   }
 }, [products]);

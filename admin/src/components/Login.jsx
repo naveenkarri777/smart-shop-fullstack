@@ -14,7 +14,6 @@ const Login = ({ Settoken }) => {
             email,
             password,
         });
-        console.log(response);
 
         if (response.data.success) {
             const token = response.data.token;

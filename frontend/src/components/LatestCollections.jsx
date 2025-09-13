@@ -7,7 +7,6 @@ const LatestCollection = () => {
   const { products } = useContext(ShopContext);
   const [latestProducts, setLatestProducts] = useState([]);
 
-  console.log("latest collection products : ",products);
   
 
   useEffect(() => {

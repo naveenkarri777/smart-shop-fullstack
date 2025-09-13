@@ -21,7 +21,6 @@ const Orders = () => {
         }
       );
 
-      console.log("Full API response:", response.data);
 
       if (response.data.success) {
         // Keep orders grouped, add extra props into each item

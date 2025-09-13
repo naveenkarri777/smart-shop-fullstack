@@ -18,10 +18,8 @@ const Orders = ({ token }) => {
         }
       );
 
-      console.log("Orders Response:", response.data);
       setOrders(response.data.orders || []);
     } catch (error) {
-      console.error("Error in admin list orders:", error.message);
     }
   };
 

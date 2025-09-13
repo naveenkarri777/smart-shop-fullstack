@@ -58,7 +58,6 @@ const Add = ({ token }) => {
         }
       );
 
-      console.log("Add product response:", response.data);
       if (response.data.success) {
         toast.success("Product added successfully");
         setName('');
@@ -73,7 +72,6 @@ const Add = ({ token }) => {
       }
 
     } catch (err) {
-      console.error("Error adding product:", err);
       toast.error("Something went wrong while adding product.");
     }
   };

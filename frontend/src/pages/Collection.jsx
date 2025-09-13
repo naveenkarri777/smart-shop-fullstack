@@ -57,7 +57,6 @@ const Collection = () => {
       productsCopy = result.map(r => r.item);
 
       if (productsCopy.length === 0) {
-        console.warn("⚠️ No results, showing all products");
         productsCopy = products;
       }
     }
@@ -73,12 +72,6 @@ const Collection = () => {
     if (subCategory.length > 0) {
       productsCopy = productsCopy.filter(item => subCategory.includes(item.subcategory));
     }
-
-    console.log("Filtering:", productsCopy.map(p => ({
-      name: p.name,
-      category: p.category,
-      subcategory: p.subcategory
-    })));
 
 
 
