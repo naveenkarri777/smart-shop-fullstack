@@ -3,6 +3,12 @@
 Smart Shop is a full-stack MERN e-commerce platform where users can browse products, manage their cart, place orders, and make secure payments.
 It comes with an admin dashboard to manage products, categories, and orders.
 
+## 🌐 Live Demo
+
+🔗 [Click here to visit Smart Shop](https://smart-shop-fullstack.vercel.app/)
+
+
+
 🚀 Tech Stack
 Frontend
 
