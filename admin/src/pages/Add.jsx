@@ -81,31 +81,33 @@ const Add = ({ token }) => {
       className="flex flex-col w-full items-start gap-3"
       onSubmit={handleSubmit}
     >
-      {/* Upload Images */}
-      <p className="mb-2">Upload Image</p>
-      <div className="flex gap-2">
-        {[1, 2, 3, 4].map((num) => (
-          <label key={num} htmlFor={`image${num}`}>
-            <img
-              className="w-20 cursor-pointer"
-              src={
-                eval(`image${num}`)
-                  ? URL.createObjectURL(eval(`image${num}`))
-                  : assets.upload_area
-              }
-              alt={`upload-${num}`}
-            />
-            <input
-              onChange={(e) =>
-                eval(`setImage${num}(e.target.files[0])`)
-              }
-              type="file"
-              id={`image${num}`}
-              hidden
-            />
-          </label>
-        ))}
-      </div>
+     {/* Upload Images */}
+<p className="mb-2">Upload Image</p>
+
+<div className="flex gap-2">
+  {[1, 2, 3, 4].map((num) => (
+    <div
+      key={num}
+      onClick={() =>
+        alert(
+          "🖼 Image upload is disabled in this demo.\nCloud storage services are not configured."
+        )
+      }
+      className="cursor-not-allowed"
+    >
+      <img
+        className="w-20 opacity-60"
+        src={assets.upload_area}
+        alt={`upload-${num}`}
+      />
+    </div>
+  ))}
+</div>
+
+<p className="text-xs text-gray-500 mt-2">
+  🖼 Image upload is disabled in the demo version.
+</p>
+
 
       {/* Product Name */}
       <div className="w-full">

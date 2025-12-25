@@ -34,23 +34,47 @@ const Product = () => {
       {/* Product Data */}
       <div className='flex gap-12 sm:gap-12 flex-col sm:flex-row'>
 
-        {/* Product Images */}
-        <div className='flex-1 flex flex-col-reverse gap-3 sm:flex-row'>
-          <div className='flex sm:flex-col overflow-x-auto sm:overflow-y-scroll justify-between sm:justify-normal sm:w-[18.7%] w-full'>
-            {Productdata.images?.map((item, index) => (
-              <img
-                onClick={() => Setimage(item)}
-                src={item}
-                key={index}
-                className='w-[24%] sm:w-full sm:mb-3 flex-shrink-0 cursor-pointer'
-                alt=""
-              />
-            ))}
-          </div>
-          <div className='w-full sm:w-[80%]'>
-            <img className='w-full h-auto' src={image} alt="" />
-          </div>
-        </div>
+
+
+
+
+      {/* Product Images */}
+<div className="flex-1 flex flex-col-reverse gap-3 sm:flex-row">
+
+  {/* Thumbnails */}
+  <div className="flex sm:flex-col sm:w-[18.7%] w-full min-h-[80px]">
+    {Productdata.images && Productdata.images.length > 0 ? (
+      Productdata.images.map((item, index) => (
+        <img
+          key={index}
+          onClick={() => Setimage(item)}
+          src={item}
+          className="w-[24%] sm:w-full sm:mb-3 flex-shrink-0 cursor-pointer"
+          alt="product"
+        />
+      ))
+    ) : (
+      <div className="w-full flex items-center justify-center text-sm text-gray-500">
+        🖼 Product images are unavailable in this demo.
+      </div>
+    )}
+  </div>
+
+  {/* Main Image */}
+  <div className="w-full sm:w-[80%] min-h-[250px] flex items-center justify-center bg-gray-100">
+    {image ? (
+      <img className="w-full h-auto" src={image} alt="product" />
+    ) : (
+      <div className="text-sm text-red-500 text-center">
+        🖼 Image service disabled in demo mode
+      </div>
+    )}
+  </div>
+
+</div>
+
+
+
 
         {/* Product Info */}
         <div className='flex-1'>
